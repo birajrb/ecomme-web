@@ -1,7 +1,21 @@
-import { Button } from "./components/ui/button";
+interface DataProps {
+  name: string,
+  id: number
+}
+
+const data = [
+  {
+    name: 'biraj',
+    id: 1,
+  },
+  { name: 'sulav', id: 2 },
+];
 
 function App() {
-  return <Button className="mt-1">hehe</Button>;
+  return data
+    .map(
+      (item: DataProps) => <div key={item.id}>{item.name}</div>,
+    );
 }
 
 export default App;
