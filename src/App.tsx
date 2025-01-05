@@ -1,21 +1,20 @@
-interface DataProps {
-  name: string,
-  id: number
-}
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-const data = [
+const router = createBrowserRouter([
   {
-    name: 'biraj',
-    id: 1,
+    element: <div>hello</div>,
+    path: '/',
   },
-  { name: 'sulav', id: 2 },
-];
+  {
+    element: <div>about us</div>,
+    path: '/about-us',
+  },
+]);
 
 function App() {
-  return data
-    .map(
-      (item: DataProps) => <div key={item.id}>{item.name}</div>,
-    );
+  return (
+    <RouterProvider router={router} />
+  );
 }
 
 export default App;
